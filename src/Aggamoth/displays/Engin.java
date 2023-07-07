@@ -138,7 +138,7 @@ public class Engin extends JFrame {
 		
 		// INTRO STARTS HERE
 		
-		textArea.setText("La Tour du Sorcier");
+		textArea.setText("Aggamoth");
 //		imageTextArea.setText("                                                                                                                                      \r\n"
 //				+ "                                                                                                                                      \r\n"
 //				+ "                                                                                                                                      \r\n"
@@ -232,7 +232,7 @@ public class Engin extends JFrame {
 		dotdotdot();
 		displayText(
 				"Nombreux sont les vaillants chevaliers à avoir tenté de prendre la tour du magicien d’assaut. Mais rares sont ceux qui réussirent "
-				+ "à franchir la forêt de l'oublie. Et encore plus rare sont ceux qui parvinrent à grimper jusqu'au dernier étage de la tour du Sorcier.");
+				+ "à franchir la forêt de l'oublie. Et encore plus rare sont ceux qui parvinrent à franchire le gouffre béant qui gardde la tour du Sorcier.");
 		dotdotdot();
 		displayText(
 				"Par hasard ou par chance, il en reste un qui peut encore se dresser contre la tyrannie du Dieu Sorcier. La silhouette d’un cavalier solitaire se détache du ciel ambre. "
@@ -240,17 +240,19 @@ public class Engin extends JFrame {
 		dotdotdot();
 		displayText(
 				"Son armure a perdu son brillant il y a bien longtemps, mais face au sable et à la poussière qui tournent "
-						+ "perpétuellement dans l’air, elle offre une protection remarquable.");
+						+ "perpétuellement dans l’air, elle tinte d'un clair son de carillon.");
 		dotdotdot();
 		displayText("Alors que le cavalier s’approche de la forêt qui borde le domaine du sorcier, un léger "
-						+ "scintillement rose éblouit vos yeux.");
+						+ "scintillement rose éblouit vos yeux. Le soleil éclaire sa silouhette comme un augure d'espoir.");
 		dotdotdot();
 		displayText(
 				"Le cavalier continue à s’approcher de vous. Le son des sabots de son destrier fait vibrer doucement votre cœur. Son galop sonne comme un tambour lors d’une parade. "
 						+ "Lorsqu’il vous aperçoit à l’orée de la forêt, il perd sa concentration.");
 		dotdotdot();
 		displayText("Alors qu’il s’apprête à entrer dans la forêt à toute vitesse, il tourne la tête vers vous: "
-						+ "'Mais c’est qui ce gars…' Une épaisse branche cingle son visage, il tombe en arrière de son cheval. Un lourd craquement se fait entendre au niveau de sa nuque.");
+						+ "'Mais c’est qui ce gars…' Une épaisse branche cingle son visage, il tombe en arrière de son cheval. Un lourd craquement se fait "
+						+ "entendre au niveau de sa nuque.\n"
+						+ "Son cheval disparait dans les ténèbres de la forêt.");
 		dotdotdot();
 		displayText("Vous n'avez aucune idée de l'endroit où vous vous trouvez. Ni de quelle heure il est. Ni même de qui vous êtes maintenant que vous y pensez. "
 				+ "Un homme vient de mourir devant vous, et derrière vous se dresse une sombre forêt. Quand vous plongez votre regard dans son feuillage,"
@@ -268,8 +270,8 @@ public class Engin extends JFrame {
 		int countMilliSec=0;
 		String textToDisplay = Engin.textArea.getText() + "\n";
 		String textWithDots = textToDisplay;
-//		for (int i = 0; i < 5000; i++) {
-		for (int i = 0; i < 0; i++) {
+		for (int i = 0; i < 5000; i++) {
+//		for (int i = 0; i < 0; i++) {
 			if (Engin.nextText==true) {
 				break;
 			}
@@ -331,7 +333,7 @@ public class Engin extends JFrame {
 	public void moveCharacterNESO(Integer indexDirection) {
 		Room previousRoom = AdventurerStatus.getPosition();
 		String nameNewRoom = AdventurerStatus.getPosition().getRoomsConnected().get(indexDirection);
-		System.out.println(nameNewRoom);
+//		System.out.println(nameNewRoom);
 		AdventurerStatus.moveToRoom(nameNewRoom);
 		if (previousRoom.getPathMusicOfTheRoom().equals(AdventurerStatus.getPosition().getPathMusicOfTheRoom())) {
 			try {
@@ -377,7 +379,7 @@ public class Engin extends JFrame {
 		String stateLumieres = "";
 		Room previousRoom = AdventurerStatus.getPosition();
 		String nameNewRoom = AdventurerStatus.getPosition().getRoomsConnected().get(indexDirection);
-		System.out.println(nameNewRoom);
+//		System.out.println(nameNewRoom);
 		AdventurerStatus.moveToRoom(nameNewRoom);
 		Room currentRoom = AdventurerStatus.getPosition();
 		if (previousRoom.getPathMusicOfTheRoom().equals(AdventurerStatus.getPosition().getPathMusicOfTheRoom())) {
@@ -470,7 +472,7 @@ public class Engin extends JFrame {
 		public void actionPerformed(ActionEvent event) {
 			
 			
-			System.out.println("###############################");
+//			System.out.println("###############################");
 			String inputRead = inputBox.getText();
 			inputBox.setText("");
 			
@@ -479,7 +481,7 @@ public class Engin extends JFrame {
 			
 			// IF PRESS ENTER WITH NOTHING IN THE INPUT BOX SKIPS THE TEXT
 			if (inputRead.equals("")) {
-				System.err.println("vide");
+//				System.err.println("vide");
 				if ( AdventurerStatus.getPosition().getName().equals("Gouffre chute")) {
 					try {
 						moveCharacter("Orée de la forêt");
@@ -524,12 +526,12 @@ public class Engin extends JFrame {
 				
 				// GOUFFRE
 				if (AdventurerStatus.getPosition().getName().split(" ")[0].equals("Gouffre")) {
-					System.err.println("Adventurer in Gouffre: "+AdventurerStatus.getPosition().getName().split(" ")[1]);
+//					System.err.println("Adventurer in Gouffre: "+AdventurerStatus.getPosition().getName().split(" ")[1]);
 					if (resInput.get("actionVerb")=="deplacer" && AdventurerStatus.getPosition().getName().split(" ")[1].equals("entrée")) {
 						if (resInput.get("directionMovement")==AdventurerStatus.getPosition().getRoomsConnected().get(0)||
 								resInput.get("directionMovement")=="plateforme"||
 								resInput.get("directionMovement")=="gouffre"){
-							System.err.println("AVENTURIER SUR PREMIERE PLATEFORME");
+//							System.err.println("AVENTURIER SUR PREMIERE PLATEFORME");
 							moveCharacterNESO(0);
 							}
 					}
@@ -538,7 +540,7 @@ public class Engin extends JFrame {
 						if (resInput.get("actionVerb")=="deplacer") {
 							if (resInput.get("directionMovement").contains("plateforme")&&
 									(inputRead.contains("troisième")||inputRead.contains("trois")||inputRead.contains("3"))){
-								System.err.println("AVENTURIER SUR TROISIEME PLATEFORME");
+//								System.err.println("AVENTURIER SUR TROISIEME PLATEFORME");
 								moveCharacterNESO(4);
 							}
 							else {
@@ -558,7 +560,7 @@ public class Engin extends JFrame {
 						if (resInput.get("actionVerb")=="deplacer") {
 							if (resInput.get("directionMovement").contains("plateforme")&&
 									(inputRead.contains("quatrième")||inputRead.contains("quatre")||inputRead.contains("4"))){
-								System.err.println("AVENTURIER SUR QUATRIEME PLATEFORME");
+//								System.err.println("AVENTURIER SUR QUATRIEME PLATEFORME");
 								moveCharacterNESO(4);
 							}
 							else {
@@ -577,7 +579,7 @@ public class Engin extends JFrame {
 						if (resInput.get("actionVerb")=="deplacer") {
 							if (resInput.get("directionMovement").contains("plateforme")&&
 									(inputRead.contains("2")||inputRead.contains("deux")||inputRead.contains("seconde")||inputRead.contains("deuxième"))){
-								System.err.println("AVENTURIER SUR SECONDE PLATEFORME");
+//								System.err.println("AVENTURIER SUR SECONDE PLATEFORME");
 								moveCharacterNESO(4);
 							}
 							else {
@@ -596,7 +598,7 @@ public class Engin extends JFrame {
 						if (resInput.get("actionVerb")=="deplacer") {
 							if (resInput.get("directionMovement").contains("plateforme")&&
 									(inputRead.contains("cinquième")||inputRead.contains("5")||inputRead.contains("cinq"))){
-								System.err.println("AVENTURIER SUR CINQUIEME PLATEFORME");
+//								System.err.println("AVENTURIER SUR CINQUIEME PLATEFORME");
 								moveCharacterNESO(4);
 							}
 							else {
@@ -628,7 +630,7 @@ public class Engin extends JFrame {
 			}
 			// TOUR
 			else if (AdventurerStatus.getPosition().getName().equals("Tour Rdc")) {
-				System.err.println("TOUR");
+//				System.err.println("TOUR");
 				if (inputRead.toLowerCase().contains("fuck you")) {
 					moveCharacterNESO(4);
 				}
@@ -659,12 +661,12 @@ public class Engin extends JFrame {
 				secondaryTextArea.setText("Je n'ai pas compris la commande");
 				secondaryTextPanel.setVisible(true);
 			}
-			System.out.println("--Position-- "+AdventurerStatus.getPosition().getName());
-			System.out.println(AdventurerStatus.getPosition().getRoomsConnected());
-			System.out.println("--Inventaire--");
-			for (Item i:AdventurerStatus.getInventaire()) {
-				System.out.println(i.getName());
-			}
+//			System.out.println("--Position-- "+AdventurerStatus.getPosition().getName());
+//			System.out.println(AdventurerStatus.getPosition().getRoomsConnected());
+//			System.out.println("--Inventaire--");
+//			for (Item i:AdventurerStatus.getInventaire()) {
+//				System.out.println(i.getName());
+//			}
 			
 			
 			}

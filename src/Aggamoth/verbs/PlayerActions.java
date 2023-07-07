@@ -63,7 +63,7 @@ public class PlayerActions {
 		MResult.put("objectUsed", objectUsed);
 		MResult.put("objectOfAction", objectOfAction);
 		
-		System.out.println("actionVerb: "+actionVerb+" directionMovement: "+directionMovement+" ObjectUsed: "+objectUsed+" objectOfAction: "+objectOfAction);
+//		System.out.println("actionVerb: "+actionVerb+" directionMovement: "+directionMovement+" ObjectUsed: "+objectUsed+" objectOfAction: "+objectOfAction);
 		return MResult;
 	}
 }
